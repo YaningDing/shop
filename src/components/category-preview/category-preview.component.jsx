@@ -1,7 +1,5 @@
 import ProductCard from '../product-card/product-card.component';
 
-
-
 import {
   CategoryPreviewContainer,
   Title,

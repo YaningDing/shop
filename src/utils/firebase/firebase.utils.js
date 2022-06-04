@@ -21,12 +21,12 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA2RY6BJoepA0Qc3Jvfvr_5mCmmFZsFcMA",
-  authDomain: "haikyuu-db.firebaseapp.com",
-  projectId: "haikyuu-db",
-  storageBucket: "haikyuu-db.appspot.com",
-  messagingSenderId: "684907707544",
-  appId: "1:684907707544:web:1e57db8b427fc85caae4ed"
+  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
+  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
+  projectId: 'crwn-clothing-db-98d4d',
+  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
+  messagingSenderId: '626766232035',
+  appId: '1:626766232035:web:506621582dab103a4d08d6',
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -67,10 +67,7 @@ export const getCategoriesAndDocuments = async () => {
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map(docSnapshot => docSnapshot.data());
-  
-  
-  //return categoryMap;
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
 };
 
 export const createUserDocumentFromAuth = async (
@@ -119,8 +116,8 @@ export const signOutUser = async () => await signOut(auth);
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
 
-export const  getCurrentUser = () => {
-  return new Promise((resolve,reject) => {
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
     const unsubscribe = onAuthStateChanged(
       auth,
       (userAuth) => {
@@ -128,7 +125,6 @@ export const  getCurrentUser = () => {
         resolve(userAuth);
       },
       reject
-    )
-
-  })
-}
+    );
+  });
+};
